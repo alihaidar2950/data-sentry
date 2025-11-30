@@ -249,7 +249,10 @@ flowchart TB
     style PARSER fill:#64b5f6,stroke:#0d47a1,stroke-width:2px
     style NORMALIZER fill:#64b5f6,stroke:#0d47a1,stroke-width:2px
     style CHANGE_DETECT fill:#ffb74d,stroke:#e65100,stroke-width:2px
-    style ALERT_ENGINE fill:#ffb74d,stroke:#e65100,stroke-width:2px```\n\n### 4.2 Scraper Engine
+    style ALERT_ENGINE fill:#ffb74d,stroke:#e65100,stroke-width:2px
+```
+
+### 4.2 Scraper Engine
 
 #### 4.1.1 **Fetcher Module** (`scraper/fetcher.py`)
 
