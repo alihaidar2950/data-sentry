@@ -1,4 +1,4 @@
-# High-Level Design (HLD)
+﻿# High-Level Design (HLD)
 ## Data Sentry - Business Data Scraping & Automation System
 
 **Version:** 1.0  
@@ -191,35 +191,35 @@ flowchart TB
 ```mermaid
 flowchart TB
     subgraph UserInterface["\ud83d\udc64 User Interface"]
-        CLI[\"CLI\"]
-        API_ENDPOINT[\"REST API\"]
+        CLI["CLI"]
+        API_ENDPOINT["REST API"]
     end
     
     subgraph CoreEngine[\"\u2699\ufe0f Core Scraping Engine"]
-        FETCHER[\"\ud83d\udd04 Async Fetcher<br/>(aiohttp)\"]
-        PARSER[\"\ud83d\udcd6 HTML Parser<br/>(BeautifulSoup)\"]
-        NORMALIZER[\"\u2728 Data Normalizer<br/>(pandas)\"]
+        FETCHER["\ud83d\udd04 Async Fetcher<br/>(aiohttp)"]
+        PARSER["\ud83d\udcd6 HTML Parser<br/>(BeautifulSoup)"]
+        NORMALIZER["\u2728 Data Normalizer<br/>(pandas)"]
     end
     
-    subgraph Storage[\"\ud83d\udcbe Storage Layer\"]
-        CSV_STORE[\"CSV Export\"]
-        DB_STORE[\"SQLite Database\"]
-        SHEETS_SYNC[\"\ud83d\udcca Google Sheets\"]
+    subgraph Storage["\ud83d\udcbe Storage Layer"]
+        CSV_STORE["CSV Export"]
+        DB_STORE["SQLite Database"]
+        SHEETS_SYNC["\ud83d\udcca Google Sheets"]
     end
     
-    subgraph Intelligence[\"\ud83e\udde0 Intelligence Layer\"]
-        CHANGE_DETECT[\"\ud83d\udd0d Change Detector\"]
-        ALERT_ENGINE[\"\ud83d\udd14 Alert Engine\"]
+    subgraph Intelligence["\ud83e\udde0 Intelligence Layer"]
+        CHANGE_DETECT["\ud83d\udd0d Change Detector"]
+        ALERT_ENGINE["\ud83d\udd14 Alert Engine"]
     end
     
-    subgraph Integration[\"\ud83d\udd0c Integrations\"]
-        EMAIL[\"\ud83d\udce7 Email (SMTP)\"]
-        SLACK[\"\ud83d\udcac Slack Webhook\"]
-        DISCORD[\"\ud83c\udfae Discord Webhook\"]
+    subgraph Integration["\ud83d\udd0c Integrations"]
+        EMAIL["\ud83d\udce7 Email (SMTP)"]
+        SLACK["\ud83d\udcac Slack Webhook"]
+        DISCORD["\ud83c\udfae Discord Webhook"]
     end
     
-    subgraph Automation[\"\u23f0 Automation\"]
-        SCHEDULER[\"APScheduler\"]
+    subgraph Automation["\u23f0 Automation"]
+        SCHEDULER["APScheduler"]
     end
     
     CLI --> FETCHER
@@ -238,7 +238,17 @@ flowchart TB
     ALERT_ENGINE --> SLACK
     ALERT_ENGINE --> DISCORD
     
-    style UserInterface fill:#e1bee7,stroke:#6a1b9a,stroke-width:3px\n    style CoreEngine fill:#90caf9,stroke:#0d47a1,stroke-width:3px\n    style Storage fill:#a5d6a7,stroke:#1b5e20,stroke-width:3px\n    style Intelligence fill:#ffcc80,stroke:#e65100,stroke-width:3px\n    style Integration fill:#f48fb1,stroke:#880e4f,stroke-width:3px\n    style Automation fill:#80deea,stroke:#00695c,stroke-width:3px\n    \n    style FETCHER fill:#64b5f6,stroke:#0d47a1,stroke-width:2px\n    style PARSER fill:#64b5f6,stroke:#0d47a1,stroke-width:2px\n    style NORMALIZER fill:#64b5f6,stroke:#0d47a1,stroke-width:2px\n    style CHANGE_DETECT fill:#ffb74d,stroke:#e65100,stroke-width:2px\n    style ALERT_ENGINE fill:#ffb74d,stroke:#e65100,stroke-width:2px\n```\n\n### 4.2 Scraper Engine
+    style UserInterface fill:#e1bee7,stroke:#6a1b9a,stroke-width:3px
+    style CoreEngine fill:#90caf9,stroke:#0d47a1,stroke-width:3px
+    style Storage fill:#a5d6a7,stroke:#1b5e20,stroke-width:3px
+    style Intelligence fill:#ffcc80,stroke:#e65100,stroke-width:3px
+    style Integration fill:#f48fb1,stroke:#880e4f,stroke-width:3px
+    style Automation fill:#80deea,stroke:#00695c,stroke-width:3px\n    
+    style FETCHER fill:#64b5f6,stroke:#0d47a1,stroke-width:2px
+    style PARSER fill:#64b5f6,stroke:#0d47a1,stroke-width:2px
+    style NORMALIZER fill:#64b5f6,stroke:#0d47a1,stroke-width:2px
+    style CHANGE_DETECT fill:#ffb74d,stroke:#e65100,stroke-width:2px
+    style ALERT_ENGINE fill:#ffb74d,stroke:#e65100,stroke-width:2px\n```\n\n### 4.2 Scraper Engine
 
 #### 4.1.1 **Fetcher Module** (`scraper/fetcher.py`)
 
@@ -1389,35 +1399,35 @@ services:
 
 ```mermaid
 flowchart TB
-    subgraph Application[\"\ud83d\udcbb Application Components\"]
-        SCRAPER[\"Scraper Engine\"]
-        API[\"REST API\"]
-        SCHEDULER[\"Scheduler\"]
-        ALERTS[\"Alert System\"]
+    subgraph Application["\ud83d\udcbb Application Components"]
+        SCRAPER["Scraper Engine"]
+        API["REST API"]
+        SCHEDULER["Scheduler"]
+        ALERTS["Alert System"]
     end
     
-    subgraph Logging[\"\ud83d\udcdd Logging Layer\"]
-        LOGGER[\"Python Logger<br/>(colorlog)\"]
-        FILE_LOG[\"File Handler<br/>logs/scraper.log\"]
-        CONSOLE_LOG[\"Console Handler<br/>(stdout)\"]
+    subgraph Logging["\ud83d\udcdd Logging Layer"]
+        LOGGER["Python Logger<br/>(colorlog)"]
+        FILE_LOG["File Handler<br/>logs/scraper.log"]
+        CONSOLE_LOG["Console Handler<br/>(stdout)"]
     end
     
-    subgraph Metrics[\"\ud83d\udcca Metrics Collection\"]
-        COUNTER[\"Counters<br/>\u2022 Jobs Total<br/>\u2022 Records Fetched<br/>\u2022 Errors Total\"]
-        HISTOGRAM[\"Histograms<br/>\u2022 Job Duration<br/>\u2022 Response Time\"]
-        GAUGE[\"Gauges<br/>\u2022 Active Workers<br/>\u2022 Queue Size\"]
+    subgraph Metrics["\ud83d\udcca Metrics Collection"]
+        COUNTER["Counters<br/>\u2022 Jobs Total<br/>\u2022 Records Fetched<br/>\u2022 Errors Total"]
+        HISTOGRAM["Histograms<br/>\u2022 Job Duration<br/>\u2022 Response Time"]
+        GAUGE["Gauges<br/>\u2022 Active Workers<br/>\u2022 Queue Size"]
     end
     
-    subgraph Health[\"\u2764\ufe0f Health Checks\"]
-        LIVENESS[\"Liveness Probe<br/>/health/live\"]
-        READINESS[\"Readiness Probe<br/>/health/ready\"]
-        DEPS[\"Dependencies Check<br/>\u2022 Database<br/>\u2022 Google Sheets API\"]
+    subgraph Health["\u2764\ufe0f Health Checks"]
+        LIVENESS["Liveness Probe<br/>/health/live"]
+        READINESS["Readiness Probe<br/>/health/ready"]
+        DEPS["Dependencies Check<br/>\u2022 Database<br/>\u2022 Google Sheets API"]
     end
     
-    subgraph Monitoring[\"\ud83d\udd0d Monitoring (Future)\"]
-        PROMETHEUS[\"Prometheus\"]
-        GRAFANA[\"Grafana Dashboard\"]
-        ALERTS_MON[\"Alert Manager\"]
+    subgraph Monitoring["\ud83d\udd0d Monitoring (Future)"]
+        PROMETHEUS["Prometheus"]
+        GRAFANA["Grafana Dashboard"]
+        ALERTS_MON["Alert Manager"]
     end
     
     SCRAPER --> LOGGER
@@ -1535,34 +1545,34 @@ timeline
 
 ```mermaid
 flowchart LR
-    subgraph MVP[\"Phase 1: MVP\"]
-        CORE[\"Core Scraping\"]
-        SHEETS[\"Google Sheets\"]
-        BASIC_ALERT[\"Basic Alerts\"]
+    subgraph MVP["Phase 1: MVP"]
+        CORE["Core Scraping"]
+        SHEETS["Google Sheets"]
+        BASIC_ALERT["Basic Alerts"]
     end
     
-    subgraph Enhanced[\"Phase 2: Enhanced\"]
-        API[\"REST API\"]
-        PROXY[\"Proxy System\"]
-        AUTH[\"Auth Scraping\"]
+    subgraph Enhanced["Phase 2: Enhanced"]
+        API["REST API"]
+        PROXY["Proxy System"]
+        AUTH["Auth Scraping"]
     end
     
-    subgraph Platform[\"Phase 3: Platform\"]
-        WEB_UI[\"Web Dashboard\"]
-        MULTI_USER[\"Multi-user\"]
-        POSTGRES[\"PostgreSQL\"]
+    subgraph Platform["Phase 3: Platform"]
+        WEB_UI["Web Dashboard"]
+        MULTI_USER["Multi-user"]
+        POSTGRES["PostgreSQL"]
     end
     
-    subgraph SaaS[\"Phase 4: SaaS\"]
-        TENANT[\"Multi-tenant\"]
-        PAYMENT[\"Payments\"]
-        AI[\"AI Features\"]
+    subgraph SaaS["Phase 4: SaaS"]
+        TENANT["Multi-tenant"]
+        PAYMENT["Payments"]
+        AI["AI Features"]
     end
     
-    subgraph Enterprise[\"Phase 5: Enterprise\"]
-        K8S[\"Kubernetes\"]
-        WEBSOCKET[\"Real-time\"]
-        ANALYTICS[\"Analytics\"]
+    subgraph Enterprise["Phase 5: Enterprise"]
+        K8S["Kubernetes"]
+        WEBSOCKET["Real-time"]
+        ANALYTICS["Analytics"]
     end
     
     MVP --> Enhanced
