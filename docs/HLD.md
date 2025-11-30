@@ -190,35 +190,35 @@ flowchart TB
 
 ```mermaid
 flowchart TB
-    subgraph UserInterface["\ud83d\udc64 User Interface"]
+    subgraph UserInterface["User Interface"]
         CLI["CLI"]
         API_ENDPOINT["REST API"]
     end
     
-    subgraph CoreEngine[\"\u2699\ufe0f Core Scraping Engine"]
-        FETCHER["\ud83d\udd04 Async Fetcher<br/>(aiohttp)"]
-        PARSER["\ud83d\udcd6 HTML Parser<br/>(BeautifulSoup)"]
-        NORMALIZER["\u2728 Data Normalizer<br/>(pandas)"]
+    subgraph CoreEngine["Core Scraping Engine"]
+        FETCHER["Async Fetcher<br/>(aiohttp)"]
+        PARSER["HTML Parser<br/>(BeautifulSoup)"]
+        NORMALIZER["Data Normalizer<br/>(pandas)"]
     end
     
-    subgraph Storage["\ud83d\udcbe Storage Layer"]
+    subgraph Storage["Storage Layer"]
         CSV_STORE["CSV Export"]
         DB_STORE["SQLite Database"]
-        SHEETS_SYNC["\ud83d\udcca Google Sheets"]
+        SHEETS_SYNC["Google Sheets"]
     end
     
-    subgraph Intelligence["\ud83e\udde0 Intelligence Layer"]
-        CHANGE_DETECT["\ud83d\udd0d Change Detector"]
-        ALERT_ENGINE["\ud83d\udd14 Alert Engine"]
+    subgraph Intelligence["Intelligence Layer"]
+        CHANGE_DETECT["Change Detector"]
+        ALERT_ENGINE["Alert Engine"]
     end
     
-    subgraph Integration["\ud83d\udd0c Integrations"]
-        EMAIL["\ud83d\udce7 Email (SMTP)"]
-        SLACK["\ud83d\udcac Slack Webhook"]
-        DISCORD["\ud83c\udfae Discord Webhook"]
+    subgraph Integration["Integrations"]
+        EMAIL["Email (SMTP)"]
+        SLACK["Slack Webhook"]
+        DISCORD["Discord Webhook"]
     end
     
-    subgraph Automation["\u23f0 Automation"]
+    subgraph Automation["Automation"]
         SCHEDULER["APScheduler"]
     end
     
@@ -243,12 +243,13 @@ flowchart TB
     style Storage fill:#a5d6a7,stroke:#1b5e20,stroke-width:3px
     style Intelligence fill:#ffcc80,stroke:#e65100,stroke-width:3px
     style Integration fill:#f48fb1,stroke:#880e4f,stroke-width:3px
-    style Automation fill:#80deea,stroke:#00695c,stroke-width:3px\n    
+    style Automation fill:#80deea,stroke:#00695c,stroke-width:3px
+    
     style FETCHER fill:#64b5f6,stroke:#0d47a1,stroke-width:2px
     style PARSER fill:#64b5f6,stroke:#0d47a1,stroke-width:2px
     style NORMALIZER fill:#64b5f6,stroke:#0d47a1,stroke-width:2px
     style CHANGE_DETECT fill:#ffb74d,stroke:#e65100,stroke-width:2px
-    style ALERT_ENGINE fill:#ffb74d,stroke:#e65100,stroke-width:2px\n```\n\n### 4.2 Scraper Engine
+    style ALERT_ENGINE fill:#ffb74d,stroke:#e65100,stroke-width:2px```\n\n### 4.2 Scraper Engine
 
 #### 4.1.1 **Fetcher Module** (`scraper/fetcher.py`)
 
@@ -1399,32 +1400,32 @@ services:
 
 ```mermaid
 flowchart TB
-    subgraph Application["\ud83d\udcbb Application Components"]
+    subgraph Application["Application Components"]
         SCRAPER["Scraper Engine"]
         API["REST API"]
         SCHEDULER["Scheduler"]
         ALERTS["Alert System"]
     end
     
-    subgraph Logging["\ud83d\udcdd Logging Layer"]
+    subgraph Logging["Logging Layer"]
         LOGGER["Python Logger<br/>(colorlog)"]
         FILE_LOG["File Handler<br/>logs/scraper.log"]
         CONSOLE_LOG["Console Handler<br/>(stdout)"]
     end
     
-    subgraph Metrics["\ud83d\udcca Metrics Collection"]
-        COUNTER["Counters<br/>\u2022 Jobs Total<br/>\u2022 Records Fetched<br/>\u2022 Errors Total"]
-        HISTOGRAM["Histograms<br/>\u2022 Job Duration<br/>\u2022 Response Time"]
-        GAUGE["Gauges<br/>\u2022 Active Workers<br/>\u2022 Queue Size"]
+    subgraph Metrics["Metrics Collection"]
+        COUNTER["Counters<br/>- Jobs Total<br/>- Records Fetched<br/>- Errors Total"]
+        HISTOGRAM["Histograms<br/>- Job Duration<br/>- Response Time"]
+        GAUGE["Gauges<br/>- Active Workers<br/>- Queue Size"]
     end
     
-    subgraph Health["\u2764\ufe0f Health Checks"]
+    subgraph Health["Health Checks"]
         LIVENESS["Liveness Probe<br/>/health/live"]
         READINESS["Readiness Probe<br/>/health/ready"]
-        DEPS["Dependencies Check<br/>\u2022 Database<br/>\u2022 Google Sheets API"]
+        DEPS["Dependencies Check<br/>- Database<br/>- Google Sheets API"]
     end
     
-    subgraph Monitoring["\ud83d\udd0d Monitoring (Future)"]
+    subgraph Monitoring["Monitoring (Future)"]
         PROMETHEUS["Prometheus"]
         GRAFANA["Grafana Dashboard"]
         ALERTS_MON["Alert Manager"]
