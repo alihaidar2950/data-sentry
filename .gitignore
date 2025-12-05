@@ -39,11 +39,11 @@ ENV/
 logs/
 *.log
 
-# Data
-data/
-*.db
-*.sqlite
-*.csv
+# Data (keep sample data for demo)
+# data/
+# Ignore large data files but keep sample CSVs
+data/*.db
+data/*.sqlite
 
 # Google Credentials
 config/credentials.json
