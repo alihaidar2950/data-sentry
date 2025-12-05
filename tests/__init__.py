@@ -1,3 +1,0 @@
-"""
-Data Sentry - Test Suite
-"""

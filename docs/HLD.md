@@ -1,10 +1,39 @@
 ﻿# High-Level Design (HLD)
 ## Data Sentry - Business Data Scraping & Automation System
 
-**Version:** 1.0  
-**Date:** November 29, 2025  
+**Version:** 2.0  
+**Date:** December 4, 2025  
 **Author:** Ali Haidar  
-**Status:** Design Phase
+**Status:** ⚠️ **FUTURE ROADMAP** - MVP Currently Live
+
+> **Note:** This document describes the **full enterprise vision** for Data Sentry.  
+> The current MVP (v0.1) is a simplified single-script implementation.  
+> This HLD serves as the architectural blueprint for future phases.
+
+---
+
+## Current Status
+
+### ✅ MVP v0.1 (Live)
+- Single `scraper.py` file
+- Scrapes Hacker News, Product Hunt, Reddit
+- CSV export with pandas
+- Basic async fetching with aiohttp
+- Simple YAML configuration
+
+### 🔄 Phase 2 (In Development)
+- Google Sheets integration
+- Email alerts
+- APScheduler for automation
+- Change detection
+
+### 🎯 Phase 3 (This Document)
+- Full architecture described below
+- REST API layer
+- Database persistence
+- Web dashboard
+- Multi-tenant support
+- Advanced features (proxy rotation, auth, etc.)
 
 ---
 
@@ -39,7 +68,9 @@ Data Sentry is a production-grade, asynchronous web scraping and data automation
 - **Marketing**: Lead generation and competitor analysis
 - **Local Business**: Supplier price tracking and inventory monitoring
 
-### 1.3 Key Differentiators
+> 💡 **Implementation Strategy:** This system is being built iteratively. The MVP focuses on core scraping and CSV export to prove value quickly. Advanced features (database, API, dashboard) will be added based on client feedback and actual usage patterns.
+
+### 1.3 Key Differentiators (Future)
 - High-concurrency async architecture (100+ concurrent requests)
 - Production-grade error handling and retry mechanisms
 - Real-time Google Sheets synchronization

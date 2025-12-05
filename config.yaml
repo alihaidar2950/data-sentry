@@ -1,0 +1,47 @@
+# Data Sentry Configuration
+
+# Scraping Settings
+scraping:
+  # How often to run the scraper (in hours)
+  interval_hours: 6
+  
+  # Reddit subreddits to monitor
+  reddit_subreddits:
+    - technology
+    - programming
+    - datascience
+  
+  # Enable/disable sources
+  sources:
+    hackernews: true
+    producthunt: true
+    reddit: true
+
+# Google Sheets Settings
+google_sheets:
+  enabled: false  # Set to true after setting up credentials
+  spreadsheet_name: "Data Sentry Results"
+  worksheet_name: "Latest Scrape"
+  # Path to your Google service account JSON file
+  credentials_file: "credentials/google_sheets_credentials.json"
+
+# Email Alerts Settings
+email_alerts:
+  enabled: false  # Set to true to enable email notifications
+  smtp_server: "smtp.gmail.com"
+  smtp_port: 587
+  sender_email: "your-email@gmail.com"
+  sender_password: "your-app-password"  # Use app password, not regular password
+  recipient_email: "alerts@example.com"
+  
+  # Alert conditions
+  alert_on_new_items: true
+  minimum_score: 100  # Only alert for items with score >= this value
+
+# Data Storage
+storage:
+  # Keep CSV files for this many days
+  csv_retention_days: 30
+  
+  # Maximum number of items to scrape per source
+  max_items_per_source: 30
